@@ -4,3 +4,7 @@ Python CPUID module for x86/x64 Linux
 This module exposes the data available from the x86 CPUID instruction to the Python virtual machine.
 
 It also provides helper methods to interpret the data.
+
+_methods.py is based in part upon work done by Flight Data Services:
+
+    https://github.com/FlightDataServices/PyCPUID
