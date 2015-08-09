@@ -10,9 +10,9 @@ X-Python3-Version: >= 3.2
 Package: python-cpuid
 Architecture: any
 Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
-Description: Python CPUID module
+Description: Python 2 CPUID module
 
 Package: python3-cpuid
 Architecture: any
 Depends: ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends}
-Description: Python CPUID module
+Description: Python 3 CPUID module
