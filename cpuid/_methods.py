@@ -5,6 +5,10 @@ try:
 except ImportError:
     pass
 
+# Add this to the level parameter in order to get extended CPUID information
+EXTENDED_OFFSET = 0x80000000
+
+# Method definitions
 def cpuid(level):
     return _cpuid.cpuid(level)
 
