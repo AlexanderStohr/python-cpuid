@@ -8,3 +8,5 @@ It also provides helper methods to interpret the data.
 _methods.py is based in part upon work done by Flight Data Services:
 
     https://github.com/FlightDataServices/PyCPUID
+
+_methods.py is licensed under LGPL version 2.1.  All other code in this module is licensed under GPL version 3.
