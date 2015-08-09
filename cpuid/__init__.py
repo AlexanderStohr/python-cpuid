@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from ._methods import *
 
 __all__ = [
