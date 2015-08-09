@@ -1,0 +1,12 @@
+Source: cpuid
+Maintainer: Michael Mohr <akihana@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: python-all-dev (>= 2.6.6-3), debhelper (>= 9)
+Standards-Version: 3.9.1
+
+Package: python-cpuid
+Architecture: any
+Depends: ${misc:Depends}, ${python:Depends}, ${shlibs:Depends}
+Description: Python CPUID module
+
