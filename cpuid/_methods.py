@@ -14,7 +14,7 @@ def cpuid(level):
 
 def vendor():
     eax, ebx, ecx, edx = _cpuid.cpuid(0)
-    return _struct.pack("III", ebx, edx, ecx).strip('\0')
+    return _struct.pack("III", ebx, edx, ecx)
 
 def stepping_id():
     return _cpuid.cpuid(1)[0] & 0xf
@@ -42,7 +42,7 @@ def brand_string():
     if a[0] < (EXTENDED_OFFSET | 0x4):
         raise NotImplementedError("Brand string is not supported by this CPU")
     segments = [_struct.pack("IIII", *_cpuid.cpuid(EXTENDED_OFFSET | k)) for k in (0x2, 0x3, 0x4)]
-    return str(''.join([s.decode('utf-8').strip('\0') for s in segments]))
+    return ''.join([s.decode('utf-8').strip('\0') for s in segments])
 
 def features():
     info = cpuid(1)
