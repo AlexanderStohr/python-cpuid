@@ -15,7 +15,7 @@ setup(
     version='1.0.0',
     author='Michael Mohr',
     author_email='akihana@gmail.com',
-    description='Python CPUID library',
+    description='Python CPUID module',
     ext_modules=[_cpuid_module],
     license='GPLv3',
     url='https://github.com/Rupan/python-cpuid',
