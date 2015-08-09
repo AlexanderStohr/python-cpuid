@@ -1,6 +1,7 @@
 from ._methods import *
 
 __all__ = [
+    'EXTENDED_OFFSET',
     'cpuid',
     'vendor',
     'stepping_id',
@@ -8,4 +9,5 @@ __all__ = [
     'family',
     'processor_type',
     'brand_string',
+    'features',
 ]
