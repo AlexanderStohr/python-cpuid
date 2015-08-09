@@ -68,8 +68,7 @@ static PyObject *_cpuid_cpuid(PyObject *module, PyObject *args) {
         return NULL;
     }
 
-    return Py_BuildValue("{s:I,s:I,s:I,s:I}",
-        "eax", eax, "ebx", ebx, "ecx", ecx, "edx", edx);
+    return Py_BuildValue("(IIII)", eax, ebx, ecx, edx);
 }
 
 #else
