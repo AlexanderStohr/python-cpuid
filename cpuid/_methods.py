@@ -34,8 +34,8 @@ except ImportError:
 EXTENDED_OFFSET = 0x80000000
 
 # Method definitions
-def cpuid(level):
-    return _cpuid.cpuid(level)
+def cpuid(level, cpu=0):
+    return _cpuid.cpuid(level, cpu)
 
 def vendor():
     eax, ebx, ecx, edx = _cpuid.cpuid(0)
