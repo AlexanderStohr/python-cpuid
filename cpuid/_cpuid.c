@@ -99,7 +99,7 @@ static PyObject *_cpuid_cpuid(PyObject *module, PyObject *args) {
 #endif
 
 static PyMethodDef _cpuid_methods[] = {
-    { "xgetbv", _cpuid_xgetbv, METH_VARARGS, "Execute xgetbv with arg in ecx and return (eax, edx)"},
+    { "xgetbv", _cpuid_xgetbv, METH_VARARGS, "Execute xgetbv with arg in ecx and return (edx, eax)"},
     { "cpuid", _cpuid_cpuid, METH_VARARGS, "Retrieve CPUID information from a given CPU"},
     { NULL, NULL, 0, NULL},
 };
