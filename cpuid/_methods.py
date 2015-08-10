@@ -127,3 +127,24 @@ _feat_table = [
     ("XSAVE", 2, 26),
     ("OSXSAVE", 2, 27),
 ]
+
+def has_avx():
+    '''
+    Detect AVX presence using algorithm specified in the Intel SDM Volume 1
+    section 14.3 "DETECTION OF AVX INSTRUCTIONS".
+    :parameter reg: Selects which AVX register to read from.
+    :return: Truth value (True or False)
+    '''
+    try:
+        info = _cpuid.cpuid(1, 0)
+    except RuntimeError:
+        return False;
+    if bool(info[2] & (1 << 27)) and bool(info[2] & (1 << 28)):
+        (edx, eax) = _pycpuid.xgetbv(0)
+        if (eax & 0b110) == 0b110:
+            return True
+        else:
+            return False
+    else:
+        return False;
+

@@ -12,4 +12,5 @@ __all__ = [
     'processor_type',
     'brand_string',
     'features',
+    'has_avx',
 ]

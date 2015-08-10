@@ -26,6 +26,24 @@
 #include <sys/types.h>
 #include <cpuid.h>
 
+static PyObject *_cpuid_xgetbv(PyObject *module, PyObject *args) {
+    unsigned int eax, ecx, edx;
+
+    if(!PyArg_ParseTuple(args, "I", &ecx))
+        return NULL;
+
+    /*
+      Reads the contents of the extended control register (XCR) specified
+      in the ECX register into registers EDX:EAX.
+    */
+    __asm__ __volatile__(
+        "xgetbv"
+        : "=a"(eax), "=d"(edx)
+        : "c"(ecx));
+
+    return Py_BuildValue("(II)", edx, eax);
+}
+
 static PyObject *_cpuid_cpuid(PyObject *module, PyObject *args) {
     pid_t pid;
     cpu_set_t saved, target;
@@ -81,6 +99,7 @@ static PyObject *_cpuid_cpuid(PyObject *module, PyObject *args) {
 #endif
 
 static PyMethodDef _cpuid_methods[] = {
+    { "xgetbv", _cpuid_xgetbv, METH_VARARGS, "Execute xgetbv with arg in ecx and return (eax, edx)"},
     { "cpuid", _cpuid_cpuid, METH_VARARGS, "Retrieve CPUID information from a given CPU"},
     { NULL, NULL, 0, NULL},
 };
