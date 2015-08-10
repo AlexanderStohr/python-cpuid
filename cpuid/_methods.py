@@ -132,7 +132,6 @@ def has_avx():
     '''
     Detect AVX presence using algorithm specified in the Intel SDM Volume 1
     section 14.3 "DETECTION OF AVX INSTRUCTIONS".
-    :parameter reg: Selects which AVX register to read from.
     :return: Truth value (True or False)
     '''
     try:
