@@ -14,6 +14,7 @@ if __name__ == "__main__":
     print("Features:", cpuid.features())
 
     eax, ebx, ecx, edx = cpuid.cpuid(1, 0)
+    # https://en.wikipedia.org/wiki/CPUID
     # http://www.flounder.com/cpuid_explorer2.htm
     cpu_sig = {
         'Stepping ID': (eax >> 0x00) & 0x0f,
